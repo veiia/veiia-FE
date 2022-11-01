@@ -1,0 +1,117 @@
+:root {
+    --bg-color: #A3CCC9;
+    --active-element-colour: #18576A;
+    --cpecial-colour: #FFA979;
+    --hover-colour: #D2E7E3;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+* {
+    font-family: SFThin;
+}
+
+.container {
+    display: flex;
+    display: block;
+    text-align: center;
+}
+
+.container-login {
+
+    margin: auto;
+    max-width: 600px;
+    max-height: 500px;
+}
+
+.veiia-logo {
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+p {
+    line-height: 22px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.gitHub-login-button {
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d2d6db;
+    width: 550px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    border: 0ch;
+
+}
+
+.button-text {
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.gitHub-login-button:active {
+    transform: scale(0.99);
+}
+
+.gitHub-login-button:hover {
+    background-color: #e4e8ec;
+    transition: background 0.5s ease;
+    cursor: pointer;
+}
+
+
+.email-login-button {
+    display: inline-block;
+    background-color: #43474b;
+    height: 43px;
+    width: 550px;
+
+    text-decoration: none;
+    color: white;
+    line-height: 25px;
+    padding-top: 17px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.email-login-button:active {
+    transform: scale(0.99);
+}
+
+.email-login-button:hover {
+    background-color: #4c5257;
+    transition: background 0.5s ease;
+    cursor: pointer;
+}
+
+.registrationLink {
+    color: #000000;
+    font-weight: 400;
+}
+
+.registrationLink:hover :visited {
+    font-weight: 800;
+    color: #000000;
+}
+
+@font-face {
+    font-family: 'SFThin';
+    src: url('../fonts/sf_ui_display_thin.ttf');
+}
