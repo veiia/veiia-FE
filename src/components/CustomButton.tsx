@@ -9,7 +9,7 @@ export enum CustomButtonStyle {
 
 interface CustomButtonProps extends ButtonProps {
   styleType?: CustomButtonStyle;
-  text: string;
+  text?: string;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({

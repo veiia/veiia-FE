@@ -89,6 +89,7 @@ const StyledMenu = styled(Menu)`
   --ant-primary-color: #000000;
   font-weight: 500;
   user-select: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
 
 const StyledNavBar = styled.nav`
@@ -99,7 +100,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1280px;
-  background-color: red;
+  padding-top: 32px;
 `;
 
 export default Layout;
