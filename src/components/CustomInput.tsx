@@ -1,8 +1,16 @@
 import { Input, InputProps } from 'antd';
+import { ReactNode} from 'react';
 import styled from 'styled-components';
 
-const CustomInput: React.FC<InputProps> = ({ ...inputProps }) => {
-  return <StyledInput {...inputProps} />;
+interface CustomInputProps extends InputProps{
+  placeholder?: string,
+  prefix?: ReactNode,
+  type?: string,
+}
+
+const CustomInput: React.FC<CustomInputProps> = ({ ...CustomInputProps }) => {
+  
+  return <StyledInput {...CustomInputProps}/>;
 };
 
 const StyledInput = styled(Input)`
