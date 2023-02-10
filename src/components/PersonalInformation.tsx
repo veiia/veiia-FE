@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CustomInput from './CustomInput';
 import EditButton from './EditButton';
 import EditebleInformation from './EditebleInformation';
 import NotEditebleInformation from './NotEditebleInformation';

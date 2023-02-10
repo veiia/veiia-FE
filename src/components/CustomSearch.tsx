@@ -1,18 +1,8 @@
-import { AudioOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
-import React from 'react';
+import { Input } from 'antd';
+
 import styled from 'styled-components';
 
 const { Search } = Input;
-
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: '#1890ff',
-    }}
-  />
-);
 
 const onSearch = (value: string) => console.log(value);
 
