@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  auth:
+    container_name: "FE"
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
