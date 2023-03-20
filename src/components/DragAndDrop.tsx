@@ -32,9 +32,9 @@ const DragAndDrop = () => {
       <p className="ant-upload-drag-icon">
         <InboxOutlined />
       </p>
-      <p className="ant-upload-text">Хотите развернуть новый сайт без подключения к Git?</p>
-      <p className="ant-upload-text">Нажмите или переместите загружаемые файлы</p>
-      <p className="ant-upload-hint">Вы можете загрузить несколько файлов</p>
+      <p className="ant-upload-text">Do you want to deploy a new website without connecting to Git?</p>
+      <p className="ant-upload-text">Click or move the downloaded files</p>
+      <p className="ant-upload-hint">You can upload multiple files</p>
     </StyledDragger>
   );
 };

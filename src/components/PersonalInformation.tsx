@@ -8,12 +8,12 @@ const PersonalInformation: React.FC = () => {
   const [editable, setEditable] = useState(false);
   return (
     <StyledPersonalInformation>
-      <h2>Персональная информация:</h2>
+      <h2>Personal information:</h2>
       <StyledInformationContainer>
         <NotEditebleInformation />
         <EditebleInformation editable={editable} />
       </StyledInformationContainer>
-      <EditButton editable={editable} onClick={() => setEditable(!editable)} />
+      <EditButton editable={editable} onClick={() => setEditable(!editable)} notActive="Edit" active="Save" />
     </StyledPersonalInformation>
   );
 };

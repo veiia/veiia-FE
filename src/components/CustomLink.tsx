@@ -11,11 +11,11 @@ const CustomLink: React.FC<CustomLinkProps> = ({ text, to }) => {
 };
 
 const StyledLink = styled(Link)`
-  color: #000000;
+  color: #ffffff;
   text-decoration-line: underline;
   &:hover {
     font-weight: 500;
-    color: #000000;
+    color: #eaeaea;
   }
 `;
 

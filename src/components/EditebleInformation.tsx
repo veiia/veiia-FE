@@ -9,7 +9,7 @@ interface EditableInformationProps {
 }
 
 const EditebleInformation: FC<EditableInformationProps> = ({ editable }) => {
-  const [username, setUsername] = useState('Пользователь');
+  const [username, setUsername] = useState('Username');
   const [email, setEmail] = useState('mail.ru');
   const [password, setPassword] = useState('******');
   return (
