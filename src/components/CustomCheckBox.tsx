@@ -10,6 +10,7 @@ const CustomCheckBox: React.FC<CustomCheckBoxProps> = ({ text }) => {
 };
 
 const StyledCheckbox = styled(Checkbox)`
+  color: white;
   .ant-checkbox-checked .ant-checkbox-inner {
     background-color: #18576a;
   }
