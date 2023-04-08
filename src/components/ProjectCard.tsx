@@ -38,7 +38,6 @@ const StyledProjectCard = styled.div`
 
   border: 1px solid #333;
 
-  width: 410px;
   height: 200px;
   padding: 20px;
 

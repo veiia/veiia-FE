@@ -18,6 +18,8 @@ const validateMessages = {
 /* eslint-enable no-template-curly-in-string */
 
 const GeneralSettingsPage = () => {
+  const text =
+    'Veiia will delete all of your projects, along with all of your deployments, domains, activity, and all other  resources belonging to your Personal Account.';
   const { initialEmail, initialName, initialUserName, userName, setUserName, name, setName, email, setEmail } =
     useContext(AppContext);
 
@@ -37,7 +39,14 @@ const GeneralSettingsPage = () => {
 
   return (
     <GeneralSettingsContainer>
-      <DeleteConfirmModal handleCancel={handleCancel} handleOk={handleOk} isModalOpen={isModalOpen} />
+      <DeleteConfirmModal
+        handleCancel={handleCancel}
+        handleOk={handleOk}
+        isModalOpen={isModalOpen}
+        text={text}
+        inputText={initialUserName}
+        tipText="Enter your username to continue:"
+      />
       <Card>
         <Container>
           <h2 style={{ color: '#ffffff', fontSize: '20px' }}>Your Username</h2>
@@ -46,7 +55,7 @@ const GeneralSettingsPage = () => {
             <Form validateMessages={validateMessages} component={false}>
               <Form.Item name={['UserName']} rules={[{ required: true }]}>
                 <CustomInput
-                  style={{ width: '300px', borderRadius: '2px 0 0 2px' }}
+                  style={{ width: '300px', borderRadius: '2px 0 0 2px', color: '#ffffff' }}
                   placeholder={userName}
                   onChange={event => {
                     setUserName(event.target.value);
@@ -58,7 +67,7 @@ const GeneralSettingsPage = () => {
             <CustomInput
               placeholder=".veiia.com"
               disabled={true}
-              style={{ width: '90px', borderRadius: '0 2px 2px 0' }}
+              style={{ width: '90px', borderRadius: '0 2px 2px 0', color: '#ffffff' }}
             />
           </InputContainer>
         </Container>
@@ -77,7 +86,7 @@ const GeneralSettingsPage = () => {
           <p style={{ color: '#ffffff' }}>Please enter your full name, or a display name you are comfortable with.</p>
           <InputContainer>
             <CustomInput
-              style={{ width: '390px' }}
+              style={{ width: '390px', color: '#ffffff' }}
               placeholder={name}
               onChange={event => {
                 setName(event.target.value);
@@ -104,7 +113,7 @@ const GeneralSettingsPage = () => {
             <Form validateMessages={validateMessages}>
               <Form.Item name={['Email']} rules={[{ type: 'email', required: true }]}>
                 <CustomInput
-                  style={{ width: '390px' }}
+                  style={{ width: '390px', color: '#ffffff' }}
                   placeholder={email}
                   onChange={event => {
                     setEmail(event.target.value);
@@ -141,23 +150,23 @@ const GeneralSettingsPage = () => {
   );
 };
 
-const InputContainer = styled.div`
+export const InputContainer = styled.div`
   display: flex;
 `;
 
-const GeneralSettingsContainer = styled.div`
+export const GeneralSettingsContainer = styled.div`
   padding-bottom: 20px;
   border-radius: 10px;
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: auto;
 
   padding: 15px;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 100%;
   height: auto;
 
@@ -168,7 +177,7 @@ const Card = styled.div`
   background-color: #000000;
 `;
 
-const Tip = styled.div`
+export const Tip = styled.div`
   width: 100%;
   display: flex;
   align-items: center;

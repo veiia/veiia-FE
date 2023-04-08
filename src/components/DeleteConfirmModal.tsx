@@ -9,11 +9,19 @@ interface DeleteConfirmModalProps {
   isModalOpen: boolean;
   handleOk: () => void;
   handleCancel: () => void;
+  text: string;
+  inputText: string;
+  tipText: string;
 }
 
-const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({ isModalOpen, handleCancel, handleOk }) => {
-  const { initialUserName } = useContext(AppContext);
-
+const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
+  isModalOpen,
+  handleCancel,
+  handleOk,
+  text,
+  inputText,
+  tipText,
+}) => {
   return (
     <>
       <ModalWindow
@@ -25,14 +33,7 @@ const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({ isModalOpen, ha
       >
         <Container>
           <hr />
-          <p style={{ color: '#ffffff', fontSize: '17px' }}>
-            Veiia will <span style={{ fontWeight: '700' }}>delete all of your projects</span>, along with all of your
-            deployments, domains, activity, and all other resources belonging to your Personal Account.
-          </p>
-          <p style={{ color: '#ffffff', fontSize: '17px' }}>
-            Veiia recommends that you transfer domains you wish to keep and remove Veiia Nameservers from all other
-            domains.
-          </p>
+          <p style={{ color: '#ffffff', fontSize: '17px' }}>{text}</p>
           <Warning>
             <p style={{ color: '#ffffff', fontSize: '15px', fontWeight: '600', margin: '0' }}>
               This action is not reversible. Please be certain.
@@ -42,13 +43,9 @@ const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({ isModalOpen, ha
 
         <DeleteForm>
           <p style={{ color: '#ffffff', margin: '0 0 5px 0' }}>
-            Enter your username <span style={{ fontWeight: '700' }}>{initialUserName}</span> to continue:
+            {tipText} <span style={{ fontWeight: '700' }}>{inputText}</span>
           </p>
-          <CustomInput />
-          {/* <p style={{ color: '#ffffff', margin: '15px 0 5px 0' }}>
-            To verify, type <span style={{ fontWeight: '700' }}>delete my personal account</span> below:
-          </p>
-          <CustomInput /> */}
+          <CustomInput style={{ color: '#ffffff' }} />
         </DeleteForm>
         <Footer>
           <CustomButton text="Cancel" styleType={CustomButtonStyle.WHITE} onClick={handleCancel} />

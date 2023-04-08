@@ -66,4 +66,35 @@ width: 250px;
 
 }
 
+body::-webkit-scrollbar {
+  width: 12px;               /* ширина всей полосы прокрутки */
+}
 
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);        /* цвет зоны отслеживания */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #333;    /* цвет бегунка */
+  border-radius: 20px;       /* округлось бегунка */
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.recharts-rectangle.recharts-tooltip-cursor {
+  fill: #333 !important;
+}
+
+.ant-popover-inner {
+  background-color: #000000 !important;
+  outline: 1px solid #333;
+}
+
+.ant-popover-arrow-content {
+  --antd-arrow-background-color: #333 !important;
+  background-color: #333 !important;
+}
+
+
+.ant-popover-inner-content{
+  padding: 20px;
+}

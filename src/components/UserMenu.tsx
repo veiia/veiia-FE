@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { MenuProps, Switch } from 'antd';
+import { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
 import styled from 'styled-components';
 import { AppContext } from '../App';
-import CustomCascader from './CustomCascader';
 
 const userIcon = require('../pictures/user_negate.png');
 
