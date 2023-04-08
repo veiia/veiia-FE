@@ -1,13 +1,23 @@
-import { Input } from 'antd';
+import { Input, Popover } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import MenuSettings from '../components/MenuSettings';
 import GeneralSettingsPage from './GeneralSettingsPage';
+import { PopUpText } from './ProjectGeneralSettings';
 
 const CONTENT: Record<string, JSX.Element> = {
   general: <GeneralSettingsPage />,
   general2: <Input value="General 2 content" />,
 };
+
+const SettingsPopUpContent = (
+  <div>
+    <PopUpText>On this page, you can edit</PopUpText>
+    <PopUpText>your personal profile data,</PopUpText>
+    <PopUpText>as well as delete your account </PopUpText>
+    <PopUpText>and everything related to it.</PopUpText>
+  </div>
+);
 
 const SettingsPage = () => {
   const { application } = useParams();
@@ -20,10 +30,12 @@ const SettingsPage = () => {
 
   return (
     <PageContainer>
-      <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0' }}>Personal Account Settings</h2>
+      <Popover placement="right" content={SettingsPopUpContent} trigger="hover">
+        <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0', width: '480px' }}>Personal Account Settings</h2>
+      </Popover>
       <hr />
       <SettingsContainer>
-        <MenuSettings />
+        <MenuSettings type="settings" />
         {CONTENT[application]}
       </SettingsContainer>
     </PageContainer>

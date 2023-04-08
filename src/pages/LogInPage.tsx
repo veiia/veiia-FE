@@ -12,10 +12,18 @@ const LogInPage = () => {
       <PageHeader text="Log in using your Email or username:">
         <Form initialValues={{ remember: true }} onFinish={onFinish}>
           <Form.Item name="username" rules={[{ required: true, message: 'Please enter your username or Email' }]}>
-            <CustomInput prefix={<UserOutlined />} placeholder="Email or username" type="text" />
+            <CustomInput
+              prefix={<UserOutlined style={{ color: '#ffffff' }} />}
+              placeholder="Email or username"
+              type="text"
+            />
           </Form.Item>
           <Form.Item name="password" rules={[{ required: true, message: 'Please enter your password' }]}>
-            <CustomInput prefix={<LockOutlined />} placeholder="Password" type="password" />
+            <CustomInput
+              prefix={<LockOutlined style={{ color: '#ffffff' }} />}
+              placeholder="Password"
+              type="password"
+            />
           </Form.Item>
           <Form.Item>
             <Form.Item name="remember" valuePropName="checked" noStyle>

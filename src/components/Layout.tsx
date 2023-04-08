@@ -1,13 +1,19 @@
 import { ProjectOutlined, BuildOutlined, UserAddOutlined, SettingOutlined } from '@ant-design/icons';
 import { MenuProps, Menu } from 'antd';
-import React, { useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import CustomButton, { CustomButtonStyle } from './CustomButton';
 import UserMenu from './UserMenu';
 const veiiaLogo = require('../pictures/veiia.png');
 
-const Layout = () => {
+type ItemsType = 'main' | 'project';
+
+interface LayoutProps {
+  type?: ItemsType;
+}
+
+const Layout: FC<LayoutProps> = ({ type = 'main' }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   console.log(pathname);
@@ -16,37 +22,68 @@ const Layout = () => {
   const onClick: MenuProps['onClick'] = e => {
     setCurrent(e.key);
   };
-  const items: MenuProps['items'] = [
-    {
-      label: 'Overview',
-      key: '/overview',
-      icon: <ProjectOutlined />,
-      onClick: () => navigate('/overview'),
-    },
-    {
-      label: 'Activity',
-      key: '/activity',
-      icon: <BuildOutlined />,
-      onClick: () => navigate('/activity'),
-    },
-    {
-      label: 'Usage',
-      key: '/usage',
-      icon: <UserAddOutlined />,
-      onClick: () => navigate('/usage'),
-    },
-    {
-      label: 'Settings',
-      key: '/settings/general',
-      icon: <SettingOutlined />,
-      onClick: () => navigate('/settings/general'),
-    },
-  ];
+
+  const items = useMemo(() => {
+    switch (type) {
+      case 'main':
+        return [
+          {
+            label: 'Overview',
+            key: '/overview',
+            icon: <ProjectOutlined />,
+            onClick: () => navigate('/overview'),
+          },
+          {
+            label: 'Activity',
+            key: '/activity',
+            icon: <BuildOutlined />,
+            onClick: () => navigate('/activity'),
+          },
+          {
+            label: 'Usage',
+            key: '/usage',
+            icon: <UserAddOutlined />,
+            onClick: () => navigate('/usage'),
+          },
+          {
+            label: 'Settings',
+            key: '/settings/general',
+            icon: <SettingOutlined />,
+            onClick: () => navigate('/settings/general'),
+          },
+        ];
+      case 'project':
+        return [
+          {
+            label: 'Project',
+            key: '/project',
+
+            onClick: () => navigate('/overview/project'),
+          },
+          {
+            label: 'Deployments',
+            key: '/deployments',
+
+            onClick: () => navigate('/overview/deployments'),
+          },
+          {
+            label: 'Settings',
+            key: '/project-settings',
+
+            onClick: () => navigate('/overview/project-settings'),
+          },
+        ];
+    }
+  }, [navigate, type]);
 
   return (
     <>
       <StyledNavBar>
-        <StyledImage src={veiiaLogo} />
+        <BriefInformation>
+          <StyledImage src={veiiaLogo} />
+          <p style={{ color: '#ffffff', fontSize: '20px', margin: '0' }}>userMail@mail.com</p>
+        </BriefInformation>
+
         <UserMenuContainer>
           <CustomButton styleType={CustomButtonStyle.BLACK} text="Help" />
           <CustomButton styleType={CustomButtonStyle.BLACK} text="Feedback" style={{ width: '100px' }} />
@@ -61,6 +98,15 @@ const Layout = () => {
     </>
   );
 };
+
+const BriefInformation = styled.div`
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+`;
 
 const UserMenuContainer = styled.div`
   display: flex;

@@ -15,25 +15,29 @@ const CustomInput: React.FC<CustomInputProps> = ({ ...CustomInputProps }) => {
 
 const StyledInput = styled(Input)`
   --ant-primary-color-outline: #333;
-
+  background-color: #111111 !important;
+  .ant-input {
+    background-color: #111111;
+    color: white;
+  }
   width: 100%;
   height: 40px;
   border-radius: 2px;
-  color: white;
-  border-color: #333;
+  border: none;
+  outline: 1px solid #333;
   background-color: black;
   &:disabled {
     background-color: #111111;
-    border-color: #333;
+    outline: 1px solid #333;
   }
   &:hover {
-    border-color: #333;
+    outline: 1px solid #333;
   }
   &:hover:disabled {
-    border-color: #333;
+    outline: 1px solid #333;
   }
   &:focus {
-    border: 1px solid #ffffff;
+    outline: 1px solid #ffffff !important;
   }
 `;
 export default CustomInput;
