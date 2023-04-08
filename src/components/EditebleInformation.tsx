@@ -1,4 +1,3 @@
-import { Form } from 'antd';
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 import CustomInput from './CustomInput';
@@ -10,7 +9,7 @@ interface EditableInformationProps {
 }
 
 const EditebleInformation: FC<EditableInformationProps> = ({ editable }) => {
-  const [username, setUsername] = useState('Пользователь');
+  const [username, setUsername] = useState('Username');
   const [email, setEmail] = useState('mail.ru');
   const [password, setPassword] = useState('******');
   return (

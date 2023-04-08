@@ -5,11 +5,11 @@ import { DividingLine, StyledP } from '.';
 const NotEditebleInformation = () => {
   return (
     <StyledNotEditebleInformation>
-      <StyledP>Имя:</StyledP>
+      <StyledP>Name:</StyledP>
       <DividingLine />
       <StyledP>Email:</StyledP>
       <DividingLine />
-      <StyledP>Пароль:</StyledP>
+      <StyledP>Password:</StyledP>
     </StyledNotEditebleInformation>
   );
 };

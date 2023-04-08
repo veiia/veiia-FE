@@ -1,21 +1,19 @@
 import { GithubOutlined } from '@ant-design/icons';
 import React from 'react';
-import { CustomButton, Background, PageHeader, CustomFormWrapper, CustomLink } from '../components';
+import { CustomButton, PageHeader, CustomFormWrapper, CustomLink } from '../components';
 import { CustomButtonStyle } from '../components/CustomButton';
 
 const CreateAccountPage = () => {
   return (
-    <Background>
-      <CustomFormWrapper>
-        <PageHeader text="Зарегистрируйте аккаунт доступными способами:">
-          <CustomButton icon={<GithubOutlined />} text="GitHub" styleType={CustomButtonStyle.LIGHT_GRAY} />
-          <CustomButton text="Email" href="/create-account-with-email" />
-          <div>
-            Уже есть аккаунт? <CustomLink text="Войти сейчас!" to="/" />
-          </div>
-        </PageHeader>
-      </CustomFormWrapper>
-    </Background>
+    <CustomFormWrapper>
+      <PageHeader text="Register an account using the available methods:">
+        <CustomButton icon={<GithubOutlined />} text="GitHub" styleType={CustomButtonStyle.LIGHT_GRAY} />
+        <CustomButton text="Email" href="/create-account-with-email" />
+        <p style={{ color: 'white' }}>
+          Already have an account? <CustomLink text="Log in now!" to="/" />
+        </p>
+      </PageHeader>
+    </CustomFormWrapper>
   );
 };
 
