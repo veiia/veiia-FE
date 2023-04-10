@@ -7,6 +7,7 @@ import { AppContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { Popover } from 'antd';
 import { PopUpText } from './ProjectGeneralSettings';
+import { PageTittle } from './ProjectSettings';
 
 const OverViewPopUpContent = (
   <div>
@@ -26,7 +27,7 @@ const OverviewPage = () => {
   return (
     <OverviewContainer>
       <Popover placement="right" content={OverViewPopUpContent} trigger="hover">
-        <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0', width: '170px' }}>Overview</h2>
+        <PageTittle style={{ fontSize: '40px', color: 'white', margin: ' 0', width: '170px' }}>Overview</PageTittle>
       </Popover>
 
       <hr />

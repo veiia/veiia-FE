@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { StackedBArChart } from '../components';
 import { PopUpText } from './ProjectGeneralSettings';
+import { PageTittle } from './ProjectSettings';
 
 const UsagePopUpContent = (
   <div>
@@ -17,7 +18,7 @@ const UsagePage = () => {
   return (
     <UsageContainer>
       <Popover placement="right" content={UsagePopUpContent} trigger="hover">
-        <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0', width: '120px' }}>Usage</h2>
+        <PageTittle>Usage</PageTittle>
       </Popover>
       <hr />
       <ChartCard>

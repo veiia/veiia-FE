@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { MenuSettings } from '../components';
+import { MenuSettings, PageHeader } from '../components';
 import Domains from './Domains';
 import ProjectGeneralSettings from './ProjectGeneralSettings';
 
@@ -23,7 +23,7 @@ const ProjectSettings = () => {
   }, [location]);
   return (
     <PageContainer>
-      <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0' }}>Project Settings</h2>
+      <PageTittle>Project Settings</PageTittle>
       <hr />
       <SettingsContainer>
         <MenuSettings type="projectSettings" />
@@ -33,9 +33,18 @@ const ProjectSettings = () => {
   );
 };
 
-const PageContainer = styled.div`
+export const PageContainer = styled.div`
   width: 1250px;
   margin: 0 auto;
+  padding-bottom: 20px;
+`;
+
+export const PageTittle = styled.h2`
+  display: inline-block;
+
+  font-size: 40px;
+  color: white;
+  margin: 0;
 `;
 
 const SettingsContainer = styled.div`
