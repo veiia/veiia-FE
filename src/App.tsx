@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import { StartLoginPage, CreateAccountPage, CreateAccountWithEmailPage, SitesPage, HelpPage, UsagePage } from './pages';
 import ActivityPage from './pages/Activity';
 import ConfigureProjectPage from './pages/ConfigureProjectPage';
+import CreateProjectPage from './pages/CreateProjectPage';
 import DeploymentsPage from './pages/DeploymentsPage';
 import Domains from './pages/Domains';
 
@@ -85,6 +86,7 @@ const App = () => {
             <Route path="activity" element={<ActivityPage />} />
             <Route path="help" element={<HelpPage />} />
             <Route path="usage" element={<UsagePage />} />
+            <Route path="/create-project" element={<CreateProjectPage />} />
             <Route path="/settings/:application" element={<SettingsPage />} />
           </Route>
           <Route element={<Layout type="project" />}>

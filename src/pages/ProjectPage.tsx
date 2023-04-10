@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { CustomButton } from '../components';
 import { CustomButtonStyle } from '../components/CustomButton';
 import StatusIcon, { StatusIconStyle } from '../components/StatusIcon';
-import { Card, Tip } from './GeneralSettingsPage';
-import { CardTittle, TipDescription } from './ProjectGeneralSettings';
+import { PageDescription } from './CreateProjectPage';
+import { Tip } from './GeneralSettingsPage';
+import { TipDescription } from './ProjectGeneralSettings';
+import { PageTittle } from './ProjectSettings';
 
 const ProjectPage = () => {
   let status = 'Okay';
@@ -12,7 +14,7 @@ const ProjectPage = () => {
   return (
     <ProjectPageContainer>
       <HeaderProjectInfo>
-        <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0' }}>Project Name</h2>
+        <PageTittle>Project Name</PageTittle>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
           <CustomButton
             styleType={CustomButtonStyle.BLACK}
@@ -23,69 +25,71 @@ const ProjectPage = () => {
         </div>
       </HeaderProjectInfo>
       <hr />
-      <h2 style={{ fontSize: '25px', color: 'white' }}>Production Deployment</h2>
-      <p style={{ color: '#9f9f9f', margin: '0 0 20px 0', fontWeight: '600' }}>
-        The deployment that is available to your visitors.
-      </p>
+      <PageTittle>Production Deployment</PageTittle>
+      <PageDescription>The deployment that is available to your visitors.</PageDescription>
       <ProjectInfo>
-        <DomainContainer>
-          <p style={{ color: '#9f9f9f', fontWeight: '600', margin: '0' }}>DOMAIN: </p>
-          <p style={{ fontWeight: '700', fontSize: '15px', color: '#ffffff', margin: '0' }}> project-link</p>
-        </DomainContainer>
-        <StatusContainer>
-          <p style={{ color: '#9f9f9f', fontWeight: '600', margin: '0' }}>STATUS:</p>
+        <InformationContainer>
+          <InformationContainerTittle>DOMAIN: </InformationContainerTittle>
+          <InformationContainerContent> project-link</InformationContainerContent>
+        </InformationContainer>
+        <InformationContainer>
+          <InformationContainerTittle>STATUS:</InformationContainerTittle>
           {status === 'Okay' ? (
-            <p style={{ color: '#ffffff', fontSize: '15px', fontWeight: '700', margin: '0' }}>Okay</p>
+            <InformationContainerContent>Okay</InformationContainerContent>
           ) : (
-            <p style={{ color: '#ffffff', fontSize: '15px', fontWeight: '700', margin: '0' }}>Error</p>
+            <InformationContainerContent>Error</InformationContainerContent>
           )}
           <StatusIcon styleType={status === 'Okay' ? StatusIconStyle.GREEN : StatusIconStyle.RED} />
-        </StatusContainer>
-        <BranchContainer>
-          <p style={{ color: '#9f9f9f', margin: '0', fontWeight: '600' }}>BRANCH:</p>
-          <p style={{ color: '#ffffff', fontSize: '15px', fontWeight: '700', margin: '0' }}>
+        </InformationContainer>
+        <InformationContainer>
+          <InformationContainerTittle>BRANCH:</InformationContainerTittle>
+          <InformationContainerContent>
             main <span style={{ color: '#9f9f9f', fontWeight: '600', margin: '0' }}>(Last commit)</span>
-          </p>
-        </BranchContainer>
+          </InformationContainerContent>
+        </InformationContainer>
         <Tip>
           <TipDescription>To update your Production Deployment, push to the "main" branch.</TipDescription>
         </Tip>
+        <ProjectControlButtons>
+          <CustomButton text="Start" styleType={CustomButtonStyle.WHITE} />
+          <CustomButton text="Stop" styleType={CustomButtonStyle.WHITE} />
+          <CustomButton text="Pause" styleType={CustomButtonStyle.WHITE} />
+        </ProjectControlButtons>
       </ProjectInfo>
-      {/* <Card>
-        <CardTittle>Deployment Status</CardTittle>
-
-      </Card> */}
     </ProjectPageContainer>
   );
 };
 
-const BranchContainer = styled.div`
+const ProjectControlButtons = styled.div`
+  display: flex;
+
+  flex-direction: row;
+  gap: 20px;
+
+  margin: 20px 0 0 0;
+`;
+
+const InformationContainer = styled.div`
   display: flex;
 
   flex-direction: row;
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
-const StatusContainer = styled.div`
-  display: flex;
-
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-
-  margin-bottom: 10px;
+const InformationContainerTittle = styled.p`
+  color: #9f9f9f;
+  margin: 0;
+  font-weight: 600;
 `;
 
-const DomainContainer = styled.div`
-  display: flex;
-
-  flex-direction: row;
-  gap: 10px;
-
-  margin-bottom: 10px;
+const InformationContainerContent = styled.p`
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0;
+  font-size: 15px;
 `;
 
 const HeaderProjectInfo = styled.div`

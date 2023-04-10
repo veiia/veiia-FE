@@ -55,7 +55,7 @@ const GeneralSettingsPage = () => {
             <Form validateMessages={validateMessages} component={false}>
               <Form.Item name={['UserName']} rules={[{ required: true }]}>
                 <CustomInput
-                  style={{ width: '300px', borderRadius: '2px 0 0 2px', color: '#ffffff' }}
+                  style={{ width: '300px', borderRadius: '2px 0 0 2px' }}
                   placeholder={userName}
                   onChange={event => {
                     setUserName(event.target.value);
@@ -86,7 +86,7 @@ const GeneralSettingsPage = () => {
           <p style={{ color: '#ffffff' }}>Please enter your full name, or a display name you are comfortable with.</p>
           <InputContainer>
             <CustomInput
-              style={{ width: '390px', color: '#ffffff' }}
+              style={{ width: '390px' }}
               placeholder={name}
               onChange={event => {
                 setName(event.target.value);
@@ -113,7 +113,7 @@ const GeneralSettingsPage = () => {
             <Form validateMessages={validateMessages}>
               <Form.Item name={['Email']} rules={[{ type: 'email', required: true }]}>
                 <CustomInput
-                  style={{ width: '390px', color: '#ffffff' }}
+                  style={{ width: '390px' }}
                   placeholder={email}
                   onChange={event => {
                     setEmail(event.target.value);

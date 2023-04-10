@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const items: MenuProps['items'] = [
   {
-    label: <a href="">Project</a>,
+    label: <a href="/create-project">Project</a>,
     key: '0',
   },
   {

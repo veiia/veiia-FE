@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
 import { message, Upload } from 'antd';
@@ -26,24 +26,42 @@ const props: UploadProps = {
   },
 };
 
-const DragAndDrop = () => {
+interface DragAndDropProps {
+  text: string;
+}
+
+const DragAndDrop: FC<DragAndDropProps> = ({ text }) => {
   return (
     <StyledDragger {...props}>
-      <p className="ant-upload-drag-icon">
+      <UploadDragIcon>
         <InboxOutlined />
-      </p>
-      <p className="ant-upload-text">Do you want to deploy a new website without connecting to Git?</p>
-      <p className="ant-upload-text">Click or move the downloaded files</p>
-      <p className="ant-upload-hint">You can upload multiple files</p>
+      </UploadDragIcon>
+
+      <DragText>Click or move the {text}</DragText>
+      <DragText>You can upload multiple files</DragText>
     </StyledDragger>
   );
 };
 
+const UploadDragIcon = styled.p`
+  color: #8d8d8d;
+  font-size: 50px;
+`;
+
+const DragText = styled.p`
+  color: #8d8d8d;
+`;
+
 const StyledDragger = styled(Dragger)`
-  background-color: #537e7b !important;
-  border-color: black !important;
-  max-width: 1000px;
-  margin: 0 auto;
+  background-color: #000000 !important;
+  border: none !important;
+  border-radius: 2px;
+
+  outline: 1px dashed #333;
+  &:hover {
+    border: none;
+    outline: 1px dashed #ffffff;
+  }
 `;
 
 export default DragAndDrop;

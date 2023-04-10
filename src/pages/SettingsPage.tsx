@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import MenuSettings from '../components/MenuSettings';
 import GeneralSettingsPage from './GeneralSettingsPage';
 import { PopUpText } from './ProjectGeneralSettings';
+import { PageTittle } from './ProjectSettings';
 
 const CONTENT: Record<string, JSX.Element> = {
   general: <GeneralSettingsPage />,
@@ -31,7 +32,7 @@ const SettingsPage = () => {
   return (
     <PageContainer>
       <Popover placement="right" content={SettingsPopUpContent} trigger="hover">
-        <h2 style={{ fontSize: '40px', color: 'white', margin: ' 0', width: '480px' }}>Personal Account Settings</h2>
+        <PageTittle>Personal Account Settings</PageTittle>
       </Popover>
       <hr />
       <SettingsContainer>
