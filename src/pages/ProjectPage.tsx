@@ -4,8 +4,8 @@ import { CustomButton } from '../components';
 import { CustomButtonStyle } from '../components/CustomButton';
 import StatusIcon, { StatusIconStyle } from '../components/StatusIcon';
 import { PageDescription } from './CreateProjectPage';
-import { Card, Tip } from './GeneralSettingsPage';
-import { CardTittle, TipDescription } from './ProjectGeneralSettings';
+import { Tip } from './GeneralSettingsPage';
+import { TipDescription } from './ProjectGeneralSettings';
 import { PageTittle } from './ProjectSettings';
 
 const ProjectPage = () => {

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { MenuSettings, PageHeader } from '../components';
+import { MenuSettings } from '../components';
 import Domains from './Domains';
 import ProjectGeneralSettings from './ProjectGeneralSettings';
 
